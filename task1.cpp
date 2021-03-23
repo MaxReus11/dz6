@@ -7,7 +7,10 @@ int main()
 {
     using namespace std;
     fstream fin("test.txt", ios::in);
-
+    if(!fin.is_open()){
+        cerr<<"Can't open \"test.txt\"!";
+        exit(EXIT_FAILURE);
+    }
     string text{
             istreambuf_iterator<char>(fin), istreambuf_iterator<char>() };
     string result;
