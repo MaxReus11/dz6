@@ -18,7 +18,7 @@ int main()
         file+=tmp;
         file+="\n";
     }
-    regex pattern(R"(([\/][\/]([[:alnum:]]|[,._();"'{}[\]\/\*\\ ]){0,}\n|\r)|([\/][\*]([[:alnum:]]|[,._();"'{}[\]\/\\ ]|\n|\r|\t){0,}[\*][\/]))");
+    regex pattern(R"(([\/][\/]([[:alnum:]]|[+=<>#,._();"'{}[\]\/\*\\ ]){0,}\n|\r)|([\/][\*]([[:alnum:]]|[+=<>#,._();"'{}[\]\/\\ ]|\n|\r|\t){0,}[\*][\/]))");
     file = regex_replace(file, pattern, "\n");
     regex pattern1(R"([\n]{1,})");
     file = regex_replace(file, pattern1, "\n");
